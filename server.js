@@ -129,16 +129,18 @@ try{
 *     consumes: application/json
 *     parameters:
 *       - in: body
-*         type: object
-*         properties:
-*           ITEM_ID:
-*               type: string
-*           ITEM_NAME:
-*               type: string
-*           ITEM_UNIT:
-*               type: string
-*           COMPANY_ID:
-*               type: string
+*         name: body
+*         schema:
+*           type: object
+*           properties:
+*             ITEM_ID:
+*                 type: string
+*             ITEM_NAME:
+*                 type: string
+*             ITEM_UNIT:
+*                 type: string
+*             COMPANY_ID:
+*                 type: string
 *     responses:
 *       201:
 *         description: Created
@@ -183,16 +185,18 @@ app.post('/foods',[check('ITEM_ID').not().isEmpty().trim(), check('ITEM_NAME').n
 *     consumes: application/json
 *     parameters:
 *       - in: body
-*         type: object
-*         properties:
-*           ITEM_ID:
-*               type: string
-*           ITEM_NAME:
-*               type: string
-*           ITEM_UNIT:
-*               type: string
-*           COMPANY_ID:
-*               type: string
+*         name: body
+*         schema:
+*           type: object
+*           properties:
+*             ITEM_ID:
+*                 type: string
+*             ITEM_NAME:
+*                 type: string
+*             ITEM_UNIT:
+*                 type: string
+*             COMPANY_ID:
+*                 type: string
 *     responses:
 *       204:
 *         description: Data updated Successfully
@@ -237,12 +241,14 @@ app.put('/foods',[check('ITEM_ID').not().isEmpty().trim(), check('ITEM_NAME').no
 *     consumes: application/json
 *     parameters:
 *       - in: body
-*         type: object
-*         properties:
-*           ITEM_ID:
-*               type: string
-*           ITEM_UNIT:
-*               type: string
+*         name: body
+*         schema:
+*           type: object
+*           properties:
+*             ITEM_ID:
+*                 type: string
+*             ITEM_UNIT:
+*                 type: string
 *     responses:
 *       200:
 *         description: ITEM_UNIT updated Successfully
