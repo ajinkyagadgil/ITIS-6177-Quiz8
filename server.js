@@ -336,6 +336,17 @@ app.delete('/foods/:itemID', async (req,res) => {
 	}
 }); 
 
+app.get('/say', (req,res) => {
+	let keyword = req.query.keyword;
+	axios.get('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-9583469b-49f1-47c2-baf2-fc05d6bff410/default/say-python?keyword='+keyword)
+	.then(response => {
+		res.status(200).send(response.data);
+	})
+	.catch(errors => {
+		console.log(errors)
+	});
+});
+
 app.listen(port, () => {
 	console.log(`Example app listening at http://localhost:${port}`)
 })
